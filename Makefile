@@ -1,7 +1,7 @@
 include /usr/share/dpkg/pkg-info.mk
 
 export KERNEL_VER=4.15
-export KERNEL_ABI=4.15.18-16-pve
+export KERNEL_ABI=4.15.18-17-pve
 
 PACKAGE=pve-kernel-${KERNEL_VER}
 
