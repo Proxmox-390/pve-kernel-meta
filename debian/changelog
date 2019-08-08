@@ -1,3 +1,9 @@
+pve-kernel-4.15 (5.4-8) pve pmg; urgency=medium
+
+  * ABI bump to 4.15.18-20-pve
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 8 Aug 2019 10:51:52 +0200
+
 pve-kernel-4.15 (5.4-7) unstable; urgency=medium
 
   * ABI bump to 4.15.18-19-pve
