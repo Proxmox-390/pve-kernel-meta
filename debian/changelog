@@ -1,4 +1,4 @@
-pve-kernel-4.15 (5.4-10) UNRELEASED; urgency=medium
+pve-kernel-4.15 (5.4-10) pve pmg; urgency=medium
 
   * ABI bump to 4.15.18-22-pve
 
