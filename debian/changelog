@@ -1,3 +1,22 @@
+pve-kernel-5.4 (6.4-1) pve pmg; urgency=medium
+
+  * proxmox-boot-tool: rename from pve-efiboot-tool to reflect wider usage
+
+  * proxmox-boot-tool: add status command
+
+  * proxmox-boot-tool: sort and remove duplicates partition-UUID entries on
+    clean
+
+  * proxmox-boot-tool: also handle legacy-boot ZFS installs
+
+  * proxmox-boot: add grub.cfg header snippet to log that the config is managed
+    by this tool
+
+  * proxmox-boot: add grub-install wrapper to redirect manually invoked calls
+    to `update-grub` to our proxmox-boot-tool refresh command.
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 23 Apr 2021 11:33:37 +0200
+
 pve-kernel-5.4 (6.3-8) pve pmg; urgency=medium
 
   * ABI bump for 5.4.106-1-pve
