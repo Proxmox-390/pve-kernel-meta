@@ -1,3 +1,9 @@
+pve-kernel-5.4 (6.4-2) buster; urgency=medium
+
+  * ABI bump for 5.4.114-1-pve
+
+ -- Proxmox Support Team <support@proxmox.com>  Sun, 09 May 2021 17:42:15 +0200
+
 pve-kernel-5.4 (6.4-1) pve pmg; urgency=medium
 
   * proxmox-boot-tool: rename from pve-efiboot-tool to reflect wider usage
