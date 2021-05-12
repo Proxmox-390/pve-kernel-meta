@@ -1,7 +1,7 @@
 include /usr/share/dpkg/pkg-info.mk
 
 export KERNEL_VER=5.11
-export KERNEL_ABI=5.11.7-1-pve
+export KERNEL_ABI=5.11.17-1-pve
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
@@ -13,7 +13,7 @@ BUILD_DIR=build
 
 DEBS=${KERNEL_DEB} ${HEADERS_DEB}
 
-SUBDIRS = efiboot bin
+SUBDIRS = proxmox-boot bin
 
 .PHONY: all
 all: ${SUBDIRS}
