@@ -1,3 +1,15 @@
+pve-kernel-5.11 (7.0-2~bpo10) bullseye; urgency=medium
+
+  * Backport to Debian Buster based releases
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 01 Jun 2021 17:23:38 +0200
+
+pve-kernel-5.11 (7.0-2) bullseye; urgency=medium
+
+  * ABI bump for 5.11.21-1-pve
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 01 Jun 2021 17:23:38 +0200
+
 pve-kernel-5.11 (7.0-1~bpo10) bullseye; urgency=medium
 
   * Backport to Debian Buster based releases
