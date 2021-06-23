@@ -1,3 +1,9 @@
+pve-kernel-5.4 (6.4-4) buster; urgency=medium
+
+  * ABI bump for 5.4.124-1-pve
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 23 Jun 2021 15:21:15 +0200
+
 pve-kernel-5.4 (6.4-3) buster; urgency=medium
 
   * ABI bump for 5.4.119-1-pve
