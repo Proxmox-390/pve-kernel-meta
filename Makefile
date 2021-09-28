@@ -1,7 +1,7 @@
 include /usr/share/dpkg/pkg-info.mk
 
 export KERNEL_VER=5.11
-export KERNEL_ABI=5.11.22-4-pve
+export KERNEL_ABI=5.11.22-5-pve
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
@@ -39,7 +39,7 @@ install: ${SUBDIRS}
 
 .PHONY: upload
 upload: ${DEBS}
-	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve,pmg --dist buster
+	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs --dist bullseye
 
 .PHONY: clean distclean
 distclean: clean
