@@ -11,7 +11,7 @@ HELPER_DEB=pve-kernel-helper_${DEB_VERSION_UPSTREAM_REVISION}_all.deb
 
 BUILD_DIR=build
 
-DEBS=${KERNEL_DEB} ${HEADERS_DEB} ${HELPER_DEB}
+DEBS=${KERNEL_DEB} ${HEADERS_DEB}
 
 SUBDIRS = proxmox-boot bin
 
@@ -30,6 +30,7 @@ ${KERNEL_DEB}: debian
 	cd ${BUILD_DIR}; debian/rules debian/control
 	echo "git clone git://git.proxmox.com/git/pve-kernel-meta.git\\ngit checkout ${GITVERSION}" > ${BUILD_DIR}/debian/SOURCE
 	cd ${BUILD_DIR}; dpkg-buildpackage -b -uc -us
+	rm ${HELPER_DEB} # build by master
 	lintian ${DEBS}
 
 .PHONY: install
