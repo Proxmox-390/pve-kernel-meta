@@ -39,7 +39,7 @@ install: ${SUBDIRS}
 
 .PHONY: upload
 upload: ${DEBS}
-	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs --dist bullseye
+	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs --dist buster
 
 .PHONY: clean distclean
 distclean: clean
