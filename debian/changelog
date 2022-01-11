@@ -1,3 +1,14 @@
+pve-kernel-5.13 (7.1-6) bullseye; urgency=medium
+
+  * d/control: make package provide the linux-image and linux-headers
+    meta-packages
+
+  * fix #3781: provide wireguard-modules for compatibillity
+
+  * proxmox-boot: handle /etc/kernel/cmdline without any newline
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 11 Jan 2022 13:43:42 +0100
+
 pve-kernel-5.13 (7.1-5) bullseye; urgency=medium
 
   * proxmox-boot: esp config: avoid leading whitespace in initrd/linux
