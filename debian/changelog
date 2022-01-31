@@ -1,3 +1,9 @@
+pve-kernel-5.13 (7.1-7) bullseye; urgency=medium
+
+  * ABI bump for 5.13.19-4-pve
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 31 Jan 2022 12:18:48 +0100
+
 pve-kernel-5.13 (7.1-6) bullseye; urgency=medium
 
   * d/control: make package provide the linux-image and linux-headers
