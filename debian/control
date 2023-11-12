@@ -11,7 +11,7 @@ Architecture: all
 Section: admin
 Provides: pve-headers
 Priority: optional
-Depends: proxmox-headers-6.2,
+Depends: proxmox-headers-6.5,
          ${misc:Depends}
 Description: Default Proxmox Kernel Headers
  This is a metapackage which will install the kernel headers for the default
@@ -21,7 +21,7 @@ Package: proxmox-default-kernel
 Architecture: all
 Section: admin
 Priority: optional
-Depends: proxmox-kernel-6.2,
+Depends: proxmox-kernel-6.5,
          ${misc:Depends}
 Description: Default Proxmox Kernel Image
  This is a metapackage which will install the kernel image for the default
