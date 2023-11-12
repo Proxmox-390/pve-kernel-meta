@@ -1,3 +1,9 @@
+proxmox-kernel-meta (1.0.1) bookworm; urgency=medium
+
+  * switch default-kernel to 6.5
+
+ -- Proxmox Support Team <support@proxmox.com>  Sun, 12 Nov 2023 15:16:28 +0100
+
 proxmox-kernel-meta (1.0.0) bookworm; urgency=medium
 
   * Initial release of new Proxmox kernel meta packages.
