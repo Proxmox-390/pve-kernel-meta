@@ -1,3 +1,11 @@
+proxmox-kernel-meta (2.0.0) trixie; urgency=medium
+
+  * build for Debian 13 Trixie based releases.
+
+  * switch default kernel to Linux 6.14.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 17 Jun 2025 11:45:53 +0200
+
 proxmox-kernel-meta (1.1.0) bookworm; urgency=medium
 
   * switch default kernel to Linux 6.8
