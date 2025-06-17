@@ -37,7 +37,7 @@ sbuild: $(DSC)
 .PHONY: upload
 upload: UPLOAD_DIST ?= $(DEB_DISTRIBUTION)
 upload: $(DEBS)
-	tar cf - $(DEBS)|ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs --dist $(UPLOAD_DIST)
+	tar cf - $(DEBS)|ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs,pdm --dist $(UPLOAD_DIST)
 
 .PHONY: clean distclean
 distclean: clean
