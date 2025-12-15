@@ -18,7 +18,6 @@ $(BUILD_DIR): debian
 	rm -rf $@ $@.tmp
 	mkdir $@.tmp
 	cp -a debian $@.tmp/
-	cd $@.tmp; debian/rules debian/control
 	echo "git clone git://git.proxmox.com/git/pve-kernel-meta.git\\ngit checkout $(GITVERSION)" > $@.tmp/debian/SOURCE
 	mv $@.tmp $@
 
