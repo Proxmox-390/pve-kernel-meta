@@ -1,3 +1,9 @@
+proxmox-kernel-meta (2.0.2) trixie; urgency=medium
+
+  * fix #7140: postinst: generate correct 6.17 symlinks.
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 15 Dec 2025 14:03:07 +0100
+
 proxmox-kernel-meta (2.0.1) trixie; urgency=medium
 
   * switch default kernel to Linux 6.17.
