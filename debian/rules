@@ -2,7 +2,16 @@
 # -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
+
+KERNEL_VER=6.17
+
+build: debian/check-no-old-kver.stamp
+
+debian/check-no-old-kver.stamp: debian/control
+	grep "proxmox-kernel-${KERNEL_VER}" debian/control
+	grep "vmlinuz-${KERNEL_VER}" debian/*.postinst
+	touch $@
 
 %:
 	dh $@
