@@ -1,3 +1,9 @@
+proxmox-kernel-meta (2.1.0) trixie; urgency=medium
+
+  * switch default kernel to Linux 7.0.
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 16 Apr 2026 10:59:56 +0200
+
 proxmox-kernel-meta (2.0.2) trixie; urgency=medium
 
   * fix #7140: postinst: generate correct 6.17 symlinks.
