@@ -6,15 +6,31 @@ export DH_VERBOSE=1
 
 KERNEL_VER=7.0
 
+include /usr/share/dpkg/architecture.mk
+
+# s390x has no Proxmox kernel: use Debian's kernel and build ZFS via DKMS
+# (headers are needed for zfs-dkms). Every other arch keeps the Proxmox kernel.
+ifeq ($(DEB_HOST_ARCH),s390x)
+KERNEL_DEPENDS=linux-image-s390x, linux-headers-s390x, zfs-dkms
+HEADERS_DEPENDS=linux-headers-s390x
+else
+KERNEL_DEPENDS=proxmox-kernel-$(KERNEL_VER)
+HEADERS_DEPENDS=proxmox-headers-$(KERNEL_VER)
+endif
+
 build: debian/check-no-old-kver.stamp
 
 debian/check-no-old-kver.stamp: debian/control
-	grep "proxmox-kernel-${KERNEL_VER}" debian/control
 	grep "vmlinuz-${KERNEL_VER}" debian/*.postinst
 	touch $@
 
 %:
 	dh $@
+
+override_dh_gencontrol:
+	echo 'kernel:Depends=$(KERNEL_DEPENDS)' >> debian/proxmox-default-kernel.substvars
+	echo 'kernel:Depends=$(HEADERS_DEPENDS)' >> debian/proxmox-default-headers.substvars
+	dh_gencontrol
 
 override_dh_installsystemd:
 	dh_installsystemd --no-start

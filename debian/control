@@ -7,21 +7,21 @@ Standards-Version: 4.6.2
 Maintainer: Proxmox Support Team <support@proxmox.com>
 
 Package: proxmox-default-headers
-Architecture: all
+Architecture: any
 Section: admin
 Provides: pve-headers
 Priority: optional
-Depends: proxmox-headers-7.0,
+Depends: ${kernel:Depends},
          ${misc:Depends}
 Description: Default Proxmox Kernel Headers
  This is a metapackage which will install the kernel headers for the default
  Proxmox kernel series.
 
 Package: proxmox-default-kernel
-Architecture: all
+Architecture: any
 Section: admin
 Priority: optional
-Depends: proxmox-kernel-7.0,
+Depends: ${kernel:Depends},
          ${misc:Depends}
 Description: Default Proxmox Kernel Image
  This is a metapackage which will install the kernel image for the default

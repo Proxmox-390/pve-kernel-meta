@@ -1,9 +1,10 @@
 include /usr/share/dpkg/pkg-info.mk
+include /usr/share/dpkg/architecture.mk
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
-KERNEL_DEB=proxmox-default-kernel_$(DEB_VERSION)_all.deb
-HEADERS_DEB=proxmox-default-headers_$(DEB_VERSION)_all.deb
+KERNEL_DEB=proxmox-default-kernel_$(DEB_VERSION)_$(DEB_HOST_ARCH).deb
+HEADERS_DEB=proxmox-default-headers_$(DEB_VERSION)_$(DEB_HOST_ARCH).deb
 
 BUILD_DIR=proxmox-kernel-meta_$(DEB_VERSION)
 DSC=proxmox-kernel-meta_$(DEB_VERSION).dsc

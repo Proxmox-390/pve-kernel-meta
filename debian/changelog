@@ -1,3 +1,14 @@
+proxmox-kernel-meta (2.1.0+s390x1) trixie; urgency=medium
+
+  * s390x: depend on Debian's linux-image-s390x + linux-headers-s390x and
+    zfs-dkms instead of the Proxmox kernel, which does not exist for s390x.
+    Packages become Architecture: any so the dependencies can differ per
+    architecture; other architectures keep proxmox-kernel/headers-7.0.
+
+  * s390x: do not create the /boot/pve rescue-boot symlinks (zipl boot).
+
+ -- Yvan Janssens <yvanj@cyber.gent>  Wed, 18 Nov 2026 07:52:56 +0100
+
 proxmox-kernel-meta (2.1.0) trixie; urgency=medium
 
   * switch default kernel to Linux 7.0.
