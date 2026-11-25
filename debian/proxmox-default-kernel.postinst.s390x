@@ -3,8 +3,9 @@
 # Abort if any command returns an error value
 set -e
 
-# s390x: Debian kernel (linux-image-s390x), booted via zipl. There is no
-# /boot/pve rescue-boot layout, so the vmlinuz-<ver> links are not created.
+# s390x: booted via zipl, whose configuration proxmox-kernel-helper maintains.
+# There is no /boot/pve rescue-boot layout, so the vmlinuz-<ver> links are not
+# created.
 
 #DEBHELPER#
 

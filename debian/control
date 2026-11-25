@@ -23,6 +23,7 @@ Section: admin
 Priority: optional
 Depends: ${kernel:Depends},
          ${misc:Depends}
+Breaks: ${kernel:Breaks}
 Description: Default Proxmox Kernel Image
  This is a metapackage which will install the kernel image for the default
  Proxmox kernel series.

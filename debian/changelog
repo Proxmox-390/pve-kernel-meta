@@ -1,3 +1,13 @@
+proxmox-kernel-meta (2.1.0+s390x3) trixie; urgency=medium
+
+  * s390x: the default kernel is the Proxmox kernel 7.3 (proxmox-kernel-
+    7.3, proxmox-headers-7.3) instead of the Debian kernel with zfs-
+    dkms; depend on the kernel helper with the zipl backend and on s390-
+    tools, and break zfs-dkms versions that would try to build for
+    Proxmox kernels.
+
+ -- Yvan Janssens <yvanj@cyber.gent>  Wed, 25 Nov 2026 12:58:19 +0000
+
 proxmox-kernel-meta (2.1.0+s390x2) trixie; urgency=medium
 
   * Rebuild with cleaned changelog and test data.

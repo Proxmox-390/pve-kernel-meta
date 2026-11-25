@@ -8,13 +8,18 @@ KERNEL_VER=7.0
 
 include /usr/share/dpkg/architecture.mk
 
-# s390x has no Proxmox kernel: use Debian's kernel and build ZFS via DKMS
-# (headers are needed for zfs-dkms). Every other arch keeps the Proxmox kernel.
+# s390x has its own default series. The kernel is booted through zipl: the
+# boot entries are kept by the zipl backend of proxmox-kernel-helper, zipl
+# itself is in s390-tools. The Proxmox kernel ships the zfs module, a zfs-dkms
+# from before it knew about Proxmox kernels would fail to build for it.
 ifeq ($(DEB_HOST_ARCH),s390x)
-KERNEL_DEPENDS=linux-image-s390x, linux-headers-s390x, zfs-dkms
-HEADERS_DEPENDS=linux-headers-s390x
+KERNEL_VER_S390X=7.3
+KERNEL_DEPENDS=proxmox-kernel-$(KERNEL_VER_S390X), proxmox-kernel-helper (>= 9.2.2+s390x1), s390-tools
+KERNEL_BREAKS=zfs-dkms (<< 2.4.4-pve1+s390x3)
+HEADERS_DEPENDS=proxmox-headers-$(KERNEL_VER_S390X)
 else
 KERNEL_DEPENDS=proxmox-kernel-$(KERNEL_VER)
+KERNEL_BREAKS=
 HEADERS_DEPENDS=proxmox-headers-$(KERNEL_VER)
 endif
 
@@ -29,6 +34,7 @@ debian/check-no-old-kver.stamp: debian/control
 
 override_dh_gencontrol:
 	echo 'kernel:Depends=$(KERNEL_DEPENDS)' >> debian/proxmox-default-kernel.substvars
+	echo 'kernel:Breaks=$(KERNEL_BREAKS)' >> debian/proxmox-default-kernel.substvars
 	echo 'kernel:Depends=$(HEADERS_DEPENDS)' >> debian/proxmox-default-headers.substvars
 	dh_gencontrol
 
